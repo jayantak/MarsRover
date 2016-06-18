@@ -25,9 +25,6 @@ class Rover {
 
     @Override
     public String toString() {
-        return "Rover{" +
-                "coordinate=" + coordinate +
-                ", facing=" + facing +
-                '}';
+        return ""+ coordinate + facing;
     }
 }

@@ -1,11 +1,11 @@
 import java.io.BufferedReader;
 import java.io.IOException;
 
-public class MarsRover {
+public class Parser {
 
     BufferedReader bufferedReader;
 
-    public MarsRover(BufferedReader bufferedReader) {
+    public Parser(BufferedReader bufferedReader) {
         this.bufferedReader = bufferedReader;
     }
 
@@ -68,7 +68,7 @@ public class MarsRover {
             System.out.println("Something went wrong with input");
         }
 
-        if("y".equals(another)) {
+        if("Y".equals(another.toUpperCase())) {
             return true;
         }
         return false;

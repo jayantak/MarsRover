@@ -6,13 +6,13 @@ public class App {
     public static void main(String[] args) {
 
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
-        MarsRover marsRover = new MarsRover(bufferedReader);
-        Coordinate maxCoordinate = marsRover.getMax();
+        Parser parser = new Parser(bufferedReader);
+        Coordinate maxCoordinate = parser.getMax();
         boolean anotherRover = true;
         while(anotherRover) {
-            Rover rover = marsRover.getRover(maxCoordinate);
-            System.out.println(marsRover.roverCommands(rover));
-            anotherRover = marsRover.anotherRover();
+            Rover rover = parser.getRover(maxCoordinate);
+            System.out.println(parser.roverCommands(rover));
+            anotherRover = parser.anotherRover();
         }
     }
 }
