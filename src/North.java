@@ -1,12 +1,13 @@
+//Understands a cardinal direction
 public class North implements CardinalDirection {
 
     @Override
     public CardinalDirection turn(RelativeDirection relativeDirection) {
         if(relativeDirection == RelativeDirection.RIGHT) {
-            return new East();
+            return CardinalDirection.EAST;
         }
         if(relativeDirection == RelativeDirection.LEFT) {
-            return new West();
+            return CardinalDirection.WEST;
         }
         return this;
     }
@@ -14,5 +15,10 @@ public class North implements CardinalDirection {
     @Override
     public Coordinate move(Coordinate coordinate) {
         return coordinate.yMove(1);
+    }
+
+    @Override
+    public String toString() {
+        return " N";
     }
 }

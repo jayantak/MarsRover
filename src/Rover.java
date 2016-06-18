@@ -1,11 +1,14 @@
+//Understands movement on an X-Y plane
 class Rover {
 
     private Coordinate coordinate;
     private CardinalDirection facing;
+    private Coordinate maxCoordinate;
 
-    public Rover(Coordinate coordinate, CardinalDirection facing) {
+    public Rover(Coordinate coordinate, CardinalDirection facing, Coordinate maxCoordinate) {
         this.coordinate = coordinate;
         this.facing = facing;
+        this.maxCoordinate = maxCoordinate;
     }
 
     void turn(RelativeDirection relativeDirection) {
@@ -13,6 +16,17 @@ class Rover {
     }
 
     void move() {
-        coordinate = facing.move(coordinate);
+        Coordinate newCoordinate = facing.move(coordinate);
+        if (newCoordinate.isValid(maxCoordinate)) {
+            coordinate = newCoordinate;
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Rover{" +
+                "coordinate=" + coordinate +
+                ", facing=" + facing +
+                '}';
     }
 }

@@ -3,10 +3,10 @@ public class East implements CardinalDirection {
     @Override
     public CardinalDirection turn(RelativeDirection relativeDirection) {
         if(relativeDirection == RelativeDirection.RIGHT) {
-            return new South();
+            return CardinalDirection.SOUTH;
         }
         if(relativeDirection == RelativeDirection.LEFT) {
-            return new North();
+            return CardinalDirection.NORTH;
         }
         return this;
     }
@@ -14,5 +14,10 @@ public class East implements CardinalDirection {
     @Override
     public Coordinate move(Coordinate coordinate) {
         return coordinate.xMove(1);
+    }
+
+    @Override
+    public String toString() {
+        return " E";
     }
 }
