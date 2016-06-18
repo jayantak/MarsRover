@@ -10,15 +10,6 @@ public class App {
         Coordinate maxCoordinate = marsRover.getMax();
 
         Rover rover = marsRover.getRover(maxCoordinate);
-        rover.turn(RelativeDirection.LEFT);
-        rover.move();
-        rover.turn(RelativeDirection.LEFT);
-        rover.move();
-        rover.turn(RelativeDirection.LEFT);
-        rover.move();
-        rover.turn(RelativeDirection.LEFT);
-        rover.move();
-        rover.move();
-        System.out.println(rover.toString());
+        System.out.println(marsRover.roverCommands(rover));
     }
 }
