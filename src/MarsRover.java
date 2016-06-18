@@ -58,6 +58,22 @@ public class MarsRover {
         return rover.toString();
     }
 
+   public boolean anotherRover() {
+        String another = "";
+        System.out.println("Continue? ");
+
+        try {
+            another = bufferedReader.readLine();
+        } catch (IOException e) {
+            System.out.println("Something went wrong with input");
+        }
+
+        if("y".equals(another)) {
+            return true;
+        }
+        return false;
+    }
+
     private CardinalDirection getDirection(String dir) {
         if("N".equals(dir)) {
             return CardinalDirection.NORTH;
