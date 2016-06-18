@@ -8,7 +8,8 @@ public class App {
         BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
         MarsRover marsRover = new MarsRover(bufferedReader);
         Coordinate maxCoordinate = marsRover.getMax();
-        Rover rover = new Rover(new Coordinate(1, 2), CardinalDirection.NORTH, maxCoordinate);
+
+        Rover rover = marsRover.getRover(maxCoordinate);
         rover.turn(RelativeDirection.LEFT);
         rover.move();
         rover.turn(RelativeDirection.LEFT);
